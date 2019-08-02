@@ -19,7 +19,7 @@
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -31,6 +31,16 @@
   
 
   
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?9b7727e00de8bad26ac60a54da8b5072";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 
 </head>
 </html>
@@ -43,10 +53,10 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/assets/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		  <h1 class="header-author"><a href="/">shibabang</a></h1>
 		</hgroup>
 		
 
@@ -105,10 +115,10 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/assets/img/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">John Doe</h1>
+			  <h1 class="header-author js-header-author">shibabang</h1>
 			</hgroup>
 			
 			
@@ -164,84 +174,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Hexo博客搭建过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/02/Hexo博客搭建过程/">Hexo博客搭建过程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/02/Hexo博客搭建过程/" class="archive-article-date">
-  	<time datetime="2019-08-02T08:08:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-        
-          <p>此次搭建博客主要参考的是这个<a href="https://www.bilibili.com/video/av44544186/?spm_id_from=trigger_reload" target="_blank" rel="noopener">视频</a>! 整个搭建过程也很顺利，现将搭建过程总结如下：</p>
-<h3 id="切换到root用户"><a href="#切换到root用户" class="headerlink" title="切换到root用户"></a>切换到root用户</h3><p>首先需要输入如下代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
-
-<p>这个命令，直接输入当前用户的密码即可切换到root用户。并且如果你的sudo设置而不需要输入密码，就直接切换到root用户了。</p>
-<h2 id="安装node-js-以及cnpm-并且使用cnpm安装hexo"><a href="#安装node-js-以及cnpm-并且使用cnpm安装hexo" class="headerlink" title="安装node.js,以及cnpm,并且使用cnpm安装hexo"></a>安装node.js,以及cnpm,并且使用cnpm安装hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm install -g cnpm --registryhttps://registry.npm.taobao.org</span><br><span class="line">cnpm -v</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建存储博客的文件夹，以下操作均是在这个文件夹下面进行-Users-cailingling-Documents-blog"><a href="#创建存储博客的文件夹，以下操作均是在这个文件夹下面进行-Users-cailingling-Documents-blog" class="headerlink" title="创建存储博客的文件夹，以下操作均是在这个文件夹下面进行, /Users/cailingling/Documents/blog"></a>创建存储博客的文件夹，以下操作均是在这个文件夹下面进行, /Users/cailingling/Documents/blog</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo init <span class="comment"># 初始化</span></span><br><span class="line">hexo s <span class="comment"># server</span></span><br><span class="line">hexo n <span class="string">"我的第一篇博客文章"</span></span><br><span class="line"><span class="built_in">cd</span> /Users/cailingling/Documents/blog/<span class="built_in">source</span>/_posts/</span><br><span class="line">vi 我的第一篇博客文章.md</span><br><span class="line"><span class="built_in">cd</span> ../..</span><br></pre></td></tr></table></figure>
-
-<h2 id="本地查看博客"><a href="#本地查看博客" class="headerlink" title="本地查看博客"></a>本地查看博客</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean <span class="comment"># 清理缓存，把public缓存文件删除</span></span><br><span class="line">hexo generate <span class="comment"># 生成新的public文件，该目录下的所有文件都是就是我们的github博客仓库的page页静态文件。可以简写为 "hexo g"</span></span><br><span class="line">hexo s <span class="comment"># 会弹出来一个可以本地访问的网址：http://localhost:4000</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="将自己的博客部署到GitHub"><a href="#将自己的博客部署到GitHub" class="headerlink" title="将自己的博客部署到GitHub"></a>将自己的博客部署到GitHub</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br><span class="line">vi _config.yml </span><br><span class="line">hexo d <span class="comment"># deploy （推上去），把public文件部署到github</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="修改主题为yilia-github-com-litten-hexo-theme-yilia"><a href="#修改主题为yilia-github-com-litten-hexo-theme-yilia" class="headerlink" title="修改主题为yilia, github.com/litten/hexo-theme-yilia"></a>修改主题为yilia, github.com/litten/hexo-theme-yilia</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br><span class="line">vi _config.yml <span class="comment"># 将theme的landscape，修改为yilia啊</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>这时再去即可查看更新后的博客主页。</p>
-
-        
-      
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/02/Hexo博客搭建过程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-数据结构和算法-复杂度分析(1)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -253,6 +185,8 @@
     </h1>
   
 
+          <!-- 显示阅读和评论数 -->
+          
         
         <a href="/2019/08/02/数据结构和算法-复杂度分析(1)/" class="archive-article-date">
   	<time datetime="2019-08-02T08:08:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
@@ -323,6 +257,8 @@
     </h1>
   
 
+          <!-- 显示阅读和评论数 -->
+          
         
         <a href="/2019/08/02/数据结构和算法-复杂度分析(2)/" class="archive-article-date">
   	<time datetime="2019-08-02T08:08:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
@@ -405,6 +341,86 @@
 
 
   
+    <article id="post-Hexo博客搭建过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/02/Hexo博客搭建过程/">Hexo博客搭建过程</a>
+    </h1>
+  
+
+          <!-- 显示阅读和评论数 -->
+          
+        
+        <a href="/2019/08/02/Hexo博客搭建过程/" class="archive-article-date">
+  	<time datetime="2019-08-02T08:08:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+        
+          <p>此次搭建博客主要参考的是这个<a href="https://www.bilibili.com/video/av44544186/?spm_id_from=trigger_reload" target="_blank" rel="noopener">视频</a>! 整个搭建过程也很顺利，现将搭建过程总结如下：</p>
+<h3 id="切换到root用户"><a href="#切换到root用户" class="headerlink" title="切换到root用户"></a>切换到root用户</h3><p>首先需要输入如下代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
+
+<p>这个命令，直接输入当前用户的密码即可切换到root用户。并且如果你的sudo设置而不需要输入密码，就直接切换到root用户了。</p>
+<h2 id="安装node-js-以及cnpm-并且使用cnpm安装hexo"><a href="#安装node-js-以及cnpm-并且使用cnpm安装hexo" class="headerlink" title="安装node.js,以及cnpm,并且使用cnpm安装hexo"></a>安装node.js,以及cnpm,并且使用cnpm安装hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm install -g cnpm --registryhttps://registry.npm.taobao.org</span><br><span class="line">cnpm -v</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建存储博客的文件夹，以下操作均是在这个文件夹下面进行-Users-cailingling-Documents-blog"><a href="#创建存储博客的文件夹，以下操作均是在这个文件夹下面进行-Users-cailingling-Documents-blog" class="headerlink" title="创建存储博客的文件夹，以下操作均是在这个文件夹下面进行, /Users/cailingling/Documents/blog"></a>创建存储博客的文件夹，以下操作均是在这个文件夹下面进行, /Users/cailingling/Documents/blog</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo init <span class="comment"># 初始化</span></span><br><span class="line">hexo s <span class="comment"># server</span></span><br><span class="line">hexo n <span class="string">"我的第一篇博客文章"</span></span><br><span class="line"><span class="built_in">cd</span> /Users/cailingling/Documents/blog/<span class="built_in">source</span>/_posts/</span><br><span class="line">vi 我的第一篇博客文章.md</span><br><span class="line"><span class="built_in">cd</span> ../..</span><br></pre></td></tr></table></figure>
+
+<h2 id="本地查看博客"><a href="#本地查看博客" class="headerlink" title="本地查看博客"></a>本地查看博客</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean <span class="comment"># 清理缓存，把public缓存文件删除</span></span><br><span class="line">hexo generate <span class="comment"># 生成新的public文件，该目录下的所有文件都是就是我们的github博客仓库的page页静态文件。可以简写为 "hexo g"</span></span><br><span class="line">hexo s <span class="comment"># 会弹出来一个可以本地访问的网址：http://localhost:4000</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="将自己的博客部署到GitHub"><a href="#将自己的博客部署到GitHub" class="headerlink" title="将自己的博客部署到GitHub"></a>将自己的博客部署到GitHub</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br><span class="line">vi _config.yml </span><br><span class="line">hexo d <span class="comment"># deploy （推上去），把public文件部署到github</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="修改主题为yilia-github-com-litten-hexo-theme-yilia"><a href="#修改主题为yilia-github-com-litten-hexo-theme-yilia" class="headerlink" title="修改主题为yilia, github.com/litten/hexo-theme-yilia"></a>修改主题为yilia, github.com/litten/hexo-theme-yilia</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br><span class="line">vi _config.yml <span class="comment"># 将theme的landscape，修改为yilia啊</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>这时再去即可查看更新后的博客主页。</p>
+
+        
+      
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/02/Hexo博客搭建过程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -416,6 +432,8 @@
     </h1>
   
 
+          <!-- 显示阅读和评论数 -->
+          
         
         <a href="/2019/08/02/hello-world/" class="archive-article-date">
   	<time datetime="2019-08-02T02:51:21.877Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
@@ -490,7 +508,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 John Doe
+    		&copy; 2019 shibabang
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -498,6 +516,15 @@
     </div>
   </div>
 </footer>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+总访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
     </div>
     <script>
 	var yiliaConfig = {
