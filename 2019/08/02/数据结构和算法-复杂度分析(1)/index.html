@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>数据结构和算法-复杂度分析(1) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="这是我第一篇数据结构和算法的学习日志，主要为了加深自己对数据结构和算法的理解。我知道学任何东西都不会一步登顶，越是难以理解的东西越是需要自己慢慢积累沉淀。我将通过写博客的方式督促自己，并且方便自己学而时习之！多有不足，希望得到大家的批评指正！ 复杂度分析为什么要进行复杂度分析呢？当我们跑一遍程序，通过统计和监控也可以得到程序所需要的时间以及所占用的内存，此种方法存在很大的弊端，列举如下：（1）依赖">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构和算法-复杂度分析(1)">
+<meta property="og:url" content="http://yoursite.com/2019/08/02/数据结构和算法-复杂度分析(1)/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这是我第一篇数据结构和算法的学习日志，主要为了加深自己对数据结构和算法的理解。我知道学任何东西都不会一步登顶，越是难以理解的东西越是需要自己慢慢积累沉淀。我将通过写博客的方式督促自己，并且方便自己学而时习之！多有不足，希望得到大家的批评指正！ 复杂度分析为什么要进行复杂度分析呢？当我们跑一遍程序，通过统计和监控也可以得到程序所需要的时间以及所占用的内存，此种方法存在很大的弊端，列举如下：（1）依赖">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-02T11:57:09.910Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="数据结构和算法-复杂度分析(1)">
+<meta name="twitter:description" content="这是我第一篇数据结构和算法的学习日志，主要为了加深自己对数据结构和算法的理解。我知道学任何东西都不会一步登顶，越是难以理解的东西越是需要自己慢慢积累沉淀。我将通过写博客的方式督促自己，并且方便自己学而时习之！多有不足，希望得到大家的批评指正！ 复杂度分析为什么要进行复杂度分析呢？当我们跑一遍程序，通过统计和监控也可以得到程序所需要的时间以及所占用的内存，此种方法存在很大的弊端，列举如下：（1）依赖">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -162,94 +166,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Hexo博客搭建过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-数据结构和算法-复杂度分析(1)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/02/Hexo博客搭建过程/">Hexo博客搭建过程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/02/Hexo博客搭建过程/" class="archive-article-date">
-  	<time datetime="2019-08-02T08:08:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-        
-          <p>此次搭建博客主要参考的是这个<a href="https://www.bilibili.com/video/av44544186/?spm_id_from=trigger_reload" target="_blank" rel="noopener">视频</a>! 整个搭建过程也很顺利，现将搭建过程总结如下：</p>
-<h3 id="切换到root用户"><a href="#切换到root用户" class="headerlink" title="切换到root用户"></a>切换到root用户</h3><p>首先需要输入如下代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
-
-<p>这个命令，直接输入当前用户的密码即可切换到root用户。并且如果你的sudo设置而不需要输入密码，就直接切换到root用户了。</p>
-<h2 id="安装node-js-以及cnpm-并且使用cnpm安装hexo"><a href="#安装node-js-以及cnpm-并且使用cnpm安装hexo" class="headerlink" title="安装node.js,以及cnpm,并且使用cnpm安装hexo"></a>安装node.js,以及cnpm,并且使用cnpm安装hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm install -g cnpm --registryhttps://registry.npm.taobao.org</span><br><span class="line">cnpm -v</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建存储博客的文件夹，以下操作均是在这个文件夹下面进行-Users-cailingling-Documents-blog"><a href="#创建存储博客的文件夹，以下操作均是在这个文件夹下面进行-Users-cailingling-Documents-blog" class="headerlink" title="创建存储博客的文件夹，以下操作均是在这个文件夹下面进行, /Users/cailingling/Documents/blog"></a>创建存储博客的文件夹，以下操作均是在这个文件夹下面进行, /Users/cailingling/Documents/blog</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo init <span class="comment"># 初始化</span></span><br><span class="line">hexo s <span class="comment"># server</span></span><br><span class="line">hexo n <span class="string">"我的第一篇博客文章"</span></span><br><span class="line"><span class="built_in">cd</span> /Users/cailingling/Documents/blog/<span class="built_in">source</span>/_posts/</span><br><span class="line">vi 我的第一篇博客文章.md</span><br><span class="line"><span class="built_in">cd</span> ../..</span><br></pre></td></tr></table></figure>
-
-<h2 id="本地查看博客"><a href="#本地查看博客" class="headerlink" title="本地查看博客"></a>本地查看博客</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean <span class="comment"># 清理缓存，把public缓存文件删除</span></span><br><span class="line">hexo generate <span class="comment"># 生成新的public文件，该目录下的所有文件都是就是我们的github博客仓库的page页静态文件。可以简写为 "hexo g"</span></span><br><span class="line">hexo s <span class="comment"># 会弹出来一个可以本地访问的网址：http://localhost:4000</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="将自己的博客部署到GitHub"><a href="#将自己的博客部署到GitHub" class="headerlink" title="将自己的博客部署到GitHub"></a>将自己的博客部署到GitHub</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br><span class="line">vi _config.yml </span><br><span class="line">hexo d <span class="comment"># deploy （推上去），把public文件部署到github</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="修改主题为yilia-github-com-litten-hexo-theme-yilia"><a href="#修改主题为yilia-github-com-litten-hexo-theme-yilia" class="headerlink" title="修改主题为yilia, github.com/litten/hexo-theme-yilia"></a>修改主题为yilia, github.com/litten/hexo-theme-yilia</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br><span class="line">vi _config.yml <span class="comment"># 将theme的landscape，修改为yilia啊</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-<p>这时再去即可查看更新后的博客主页。</p>
-
-        
-      
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/02/Hexo博客搭建过程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据结构和算法-复杂度分析(1)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/02/数据结构和算法-复杂度分析(1)/">数据结构和算法-复杂度分析(1)</a>
+    <h1 class="article-title" itemprop="name">
+      数据结构和算法-复杂度分析(1)
     </h1>
   
 
@@ -281,16 +205,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/02/数据结构和算法-复杂度分析(1)/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/02/数据结构和算法-复杂度分析(1)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/08/02/Hexo博客搭建过程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hexo博客搭建过程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/02/数据结构和算法-复杂度分析(2)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构和算法-复杂度分析(2)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -310,176 +302,14 @@
 
 
 
-
   
-    <article id="post-数据结构和算法-复杂度分析(2)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/02/数据结构和算法-复杂度分析(2)/">数据结构和算法-复杂度分析(2)</a>
-    </h1>
   
 
-        
-        <a href="/2019/08/02/数据结构和算法-复杂度分析(2)/" class="archive-article-date">
-  	<time datetime="2019-08-02T08:08:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-        
-          <h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><h3 id="最好和最坏时间复杂度"><a href="#最好和最坏时间复杂度" class="headerlink" title="最好和最坏时间复杂度"></a>最好和最坏时间复杂度</h3><ol>
-<li>最坏情况时间复杂度：代码在最理想情况下执行的时间复杂度。</li>
-<li>最好情况时间复杂度：代码在最坏情况下执行的时间复杂度。</li>
-</ol>
-<p>拿下面的查找函数find为例子，如果要查找的元素正好位于数组的第一个位置，那么时间复杂度就是O(1),如果要查找的元素正好位于最后一个，那么就是最坏时间复杂度O(n)。</p>
-<h3 id="平均时间复杂度"><a href="#平均时间复杂度" class="headerlink" title="平均时间复杂度"></a>平均时间复杂度</h3><p>平均时间复杂度：用代码在所有情况下执行的次数的加权平均值表示。那么如何计算平均时间复杂度呢？</p>
-<p>因为要查找的变量x出现在数组中的位置可以有n+1种情况，最后这一种就代表要查找的元素不在此数组中。所以此时将每种情况下，查找元素需要遍历的元素个数累加即：1+2+3+…+n+n,然后除以n+1得到：((n+3)n)/(n+1),由此得到需要遍历元素个数的平均值。根据时间复杂度的大O计数法，可以省略系数、低阶和常量，所以就是O(n)。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// n 表示数组 array 的长度</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> n, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> pos = -<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (; i &lt; n; ++i) &#123;</span><br><span class="line">    <span class="keyword">if</span> (array[i] == x) &#123;</span><br><span class="line">       pos = i;</span><br><span class="line">       <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> pos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>但是前面计算平均时间复杂度是有一定的问题的，因为没有把每种情况会出现的概率考虑进去。首先，要查找的元素要么在数组中，要么不在数组中，在和不在的概率都是1/2；另外要查找的元素出现在0-n-1这n个位置中的概率也是一样的，即为1/n。那么根据概率乘法，要查找的元素出现在0-n-1的概率就是1/2n。因此平均时间复杂度就变为了：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1\*(1/2n) + 2\*(1/2n) + 3\*(1/2n) + ... + n\*(1/2n) + n \* 1/2 = (3n + 1)/4 = O(n)</span><br></pre></td></tr></table></figure>
-
-<p>用大O表示法来表示，去掉系数和常量，这段代码的加权平均时间复杂度仍然是O(n)。</p>
-<h3 id="均摊时间复杂度"><a href="#均摊时间复杂度" class="headerlink" title="均摊时间复杂度"></a>均摊时间复杂度</h3><p>均摊时间复杂度：在代码执行的所有复杂度情况中绝大部分是低级别的复杂度，个别情况是高级别复杂度且发生具有时序关系时，可以将个别高级别复杂度均摊到低级别复杂度上。基本上均摊结果就等于低级别复杂度。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// array 表示一个长度为 n 的数组</span></span><br><span class="line"><span class="comment">// 代码中的 array.length 就等于 n</span></span><br><span class="line"><span class="keyword">int</span>[] array = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line"><span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (count == array.length) &#123;</span><br><span class="line">      <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array.length; ++i) &#123;</span><br><span class="line">         sum = sum + array[i];</span><br><span class="line">      &#125;</span><br><span class="line">      array[<span class="number">0</span>] = sum;</span><br><span class="line">      count = <span class="number">1</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   array[count] = val;</span><br><span class="line">   ++count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>以上这段代码，是往数组中插入数据，最理想的情况就是数组中有空闲位置，此时插入到数组下标为count的位置就好，此时时间复杂度为O(1),最坏情况就是数组中没有空闲空间了，这时就需要做一次数组遍历求和，然后再将数据插入，此时是最坏时间复杂度O(n)。</p>
-<p>此时如果去计算平均时间复杂度就是：插入数组的n个位置的时间复杂度为O(1),额外情况就是上面所说的O(n),而且这n+1种情况的发生概率一样。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1\*(1/(n+1)) + 1\*(1/(n+1)) + 1\*(1/(n+1)) + ... + 1\*(1/(n+1)) + n\*(1/(n+1)) = O(1)</span><br></pre></td></tr></table></figure>
-
-<p>对比以上两个函数find()和insert()，对于find来说最优时间复杂度是O(1)，而对于insert()来说，大部分情况下时间复杂度都是O(1)。另外对于这里的insert()函数来说，并非一次操作，而是循环往复的操作，而且每一次O(n)的操作之后都会接着有n-1次O(1)的插入操作。所以就可以将耗时多的那次均摊到接下来的n-1次操作上。均摊下来，这一组连续操作的时间复杂度就是O(1)。这就是均摊时间复杂度。此种分析方法叫做摊还分析法。</p>
-<p>均摊时间复杂度就是一种特殊的平均时间复杂度，而且二者的应用场景并不多。</p>
-<h3 id="一个分析实例"><a href="#一个分析实例" class="headerlink" title="一个分析实例"></a>一个分析实例</h3><p>add()函数如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 全局变量，大小为 10 的数组 array，长度 len，下标 i。</span></span><br><span class="line"><span class="keyword">int</span> array[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];  <span class="comment">// len并非确定量，只是初始值而已</span></span><br><span class="line"><span class="keyword">int</span> len = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 往数组中添加一个元素</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> element)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (i &gt;= len) &#123; <span class="comment">// 数组空间不够了</span></span><br><span class="line">     <span class="comment">// 重新申请一个 2 倍大小的数组空间</span></span><br><span class="line">     <span class="keyword">int</span> new_array[] = <span class="keyword">new</span> <span class="keyword">int</span>[len*<span class="number">2</span>];</span><br><span class="line">     <span class="comment">// 把原来 array 数组中的数据依次 copy 到 new_array</span></span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; ++j) &#123;</span><br><span class="line">       new_array[j] = array[j];</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// new_array 复制给 array，array 现在大小就是 2 倍 len 了</span></span><br><span class="line">     array = new_array;</span><br><span class="line">     len = <span class="number">2</span> * len;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// 将 element 放到下标为 i 的位置，下标 i 加一</span></span><br><span class="line">   array[i] = element;</span><br><span class="line">   ++i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>最好情况时间复杂度为 O(1)</li>
-<li>最坏情况分析：<br> 最坏情况代码执行的次数跟每次数组的长度有关<br> 第1次调用insert的执行的次数为 n ,<br> 第2次调用insert的执行的次数为 2n ,<br> 第3次调用insert的执行的次数为 2^2 * n<br> 第k次调用insert的执行的次数为 2^(k-1) * n<br> 最坏时间复杂度为 O(n)。</li>
-<li>平均情况分析<br> 当每次遇到最坏情况时数组会进行2倍扩容，原数组被导入新数组，虽然数组的长度变大了，但是插入操作落在的区间的长度是一样的，分别是0<del>len-1, len</del>(2len-1),….；<br> 插入的情况仍是len+1种：0~len-1和插满之后的O(len)；所以每次插入的概率是：p= 1/len+1，<br> 最后求出加权平均时间复杂度为 1<em>p + 2</em>p+ ▪▪▪ + len*p + len * p = O(1) ; </li>
-<li>均摊时间复杂度 O(1)<br> 均摊复杂度由于每次O(len)的出现都跟着len次O(1)，是前后连贯的，因而将O(len)平摊到前len次上，得出平摊复杂度是O(1)</li>
-</ol>
-
-        
-      
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/02/数据结构和算法-复杂度分析(2)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/02/hello-world/">Hello World</a>
-    </h1>
   
 
-        
-        <a href="/2019/08/02/hello-world/" class="archive-article-date">
-  	<time datetime="2019-08-02T02:51:21.877Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-      
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/02/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -502,8 +332,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
