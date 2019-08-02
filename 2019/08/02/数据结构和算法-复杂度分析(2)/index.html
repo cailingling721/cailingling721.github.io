@@ -311,23 +311,41 @@ var _hmt = _hmt || [];
       <div class="clearfix"></div>
     </div>
   </div>
+
+  <! -- 添加捐赠图标 -->
+<div class ="post-donate">
+    <div id="donate_board" class="donate_bar center">
+        <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
+        <span class="donate_txt">
+           &uarr;<br>
+		   欣赏此文？求鼓励，求支持！
+        </span>
+        <br>
+      </div>  
+	<div id="donate_guide" class="donate_bar center hidden" >
+		<!-- 支付宝打赏图案 -->
+		<img src="/img/zhifubao.jpg" alt="支付宝打赏"> 
+		<!-- 微信打赏图案 -->
+		<img src="/img/weixin.jpg" alt="微信打赏">  
+    </div>
+	<script type="text/javascript">
+		document.getElementById('btn_donate').onclick = function(){
+			$('#donate_board').addClass('hidden');
+			$('#donate_guide').removeClass('hidden');
+		}
+	</script>
+</div>
+<! -- 添加捐赠图标 -->
+
+
 </article>
 
   
 <nav id="article-nav">
   
-    <a href="/2019/08/02/数据结构和算法-复杂度分析(1)/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据结构和算法-复杂度分析(1)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/02/Hexo博客搭建过程/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo博客搭建过程</div>
+    <a href="/2019/08/02/数据结构和算法-复杂度分析(1)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构和算法-复杂度分析(1)</div>
       <i class="icon-circle-right"></i>
     </a>
   
