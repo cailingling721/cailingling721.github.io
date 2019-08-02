@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo博客搭建过程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="此次搭建博客主要参考的是这个视频! 整个搭建过程也很顺利，现将搭建过程总结如下： 切换到root用户首先需要输入如下代码： 1sudo su  这个命令，直接输入当前用户的密码即可切换到root用户。并且如果你的sudo设置而不需要输入密码，就直接切换到root用户了。 安装node.js,以及cnpm,并且使用cnpm安装hexo12345node -vnpm install -g cnpm -">
+  <meta name="description" content="此次搭建博客主要参考的是这个视频! 整个搭建过程也很顺利，现将搭建过程总结如下： 切换到root用户首先需要输入如下代码： 1sudo su  这个命令，直接输入当前用户的密码即可切换到root用户。并且如果你的sudo设置而不需要输入密码，就直接切换到root用户了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客搭建过程">
 <meta property="og:url" content="http://yoursite.com/2019/08/02/Hexo博客搭建过程/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="此次搭建博客主要参考的是这个视频! 整个搭建过程也很顺利，现将搭建过程总结如下： 切换到root用户首先需要输入如下代码： 1sudo su  这个命令，直接输入当前用户的密码即可切换到root用户。并且如果你的sudo设置而不需要输入密码，就直接切换到root用户了。 安装node.js,以及cnpm,并且使用cnpm安装hexo12345node -vnpm install -g cnpm -">
+<meta property="og:description" content="此次搭建博客主要参考的是这个视频! 整个搭建过程也很顺利，现将搭建过程总结如下： 切换到root用户首先需要输入如下代码： 1sudo su  这个命令，直接输入当前用户的密码即可切换到root用户。并且如果你的sudo设置而不需要输入密码，就直接切换到root用户了。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-02T11:52:51.486Z">
+<meta property="og:updated_time" content="2019-08-02T13:58:12.607Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客搭建过程">
-<meta name="twitter:description" content="此次搭建博客主要参考的是这个视频! 整个搭建过程也很顺利，现将搭建过程总结如下： 切换到root用户首先需要输入如下代码： 1sudo su  这个命令，直接输入当前用户的密码即可切换到root用户。并且如果你的sudo设置而不需要输入密码，就直接切换到root用户了。 安装node.js,以及cnpm,并且使用cnpm安装hexo12345node -vnpm install -g cnpm -">
+<meta name="twitter:description" content="此次搭建博客主要参考的是这个视频! 整个搭建过程也很顺利，现将搭建过程总结如下： 切换到root用户首先需要输入如下代码： 1sudo su  这个命令，直接输入当前用户的密码即可切换到root用户。并且如果你的sudo设置而不需要输入密码，就直接切换到root用户了。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -218,6 +218,8 @@ var _hmt = _hmt || [];
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
 
 <p>这个命令，直接输入当前用户的密码即可切换到root用户。并且如果你的sudo设置而不需要输入密码，就直接切换到root用户了。</p>
+<a id="more"></a>
+
 <h2 id="安装node-js-以及cnpm-并且使用cnpm安装hexo"><a href="#安装node-js-以及cnpm-并且使用cnpm安装hexo" class="headerlink" title="安装node.js,以及cnpm,并且使用cnpm安装hexo"></a>安装node.js,以及cnpm,并且使用cnpm安装hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm install -g cnpm --registryhttps://registry.npm.taobao.org</span><br><span class="line">cnpm -v</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
 
 <h2 id="创建存储博客的文件夹，以下操作均是在这个文件夹下面进行-Users-cailingling-Documents-blog"><a href="#创建存储博客的文件夹，以下操作均是在这个文件夹下面进行-Users-cailingling-Documents-blog" class="headerlink" title="创建存储博客的文件夹，以下操作均是在这个文件夹下面进行, /Users/cailingling/Documents/blog"></a>创建存储博客的文件夹，以下操作均是在这个文件夹下面进行, /Users/cailingling/Documents/blog</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo init <span class="comment"># 初始化</span></span><br><span class="line">hexo s <span class="comment"># server</span></span><br><span class="line">hexo n <span class="string">"我的第一篇博客文章"</span></span><br><span class="line"><span class="built_in">cd</span> /Users/cailingling/Documents/blog/<span class="built_in">source</span>/_posts/</span><br><span class="line">vi 我的第一篇博客文章.md</span><br><span class="line"><span class="built_in">cd</span> ../..</span><br></pre></td></tr></table></figure>
@@ -299,18 +301,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2019/08/02/数据结构和算法-复杂度分析(1)/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据结构和算法-复杂度分析(1)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/02/数据结构和算法-复杂度分析(2)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构和算法-复杂度分析(2)</div>
+    <a href="/2019/08/02/数据结构和算法-复杂度分析(1)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构和算法-复杂度分析(1)</div>
       <i class="icon-circle-right"></i>
     </a>
   
