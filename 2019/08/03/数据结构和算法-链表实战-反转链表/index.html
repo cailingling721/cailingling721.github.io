@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>数据结构和算法-链表实战之反转链表 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="链表实战题目1 - 反转链表题目如下：输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL进阶: 你可以迭代或递归地反转链表。你能否用两种方法解决这道题？ 方法一：反转链表最直接的思路就是转化为数组之后再生成链表。但是此方法的空间复杂度比较高，时间复杂度也不好。1234567891011121314">
+  <meta name="description" content="链表实战题目1 - 反转链表题目如下：输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL进阶: 你可以迭代或递归地反转链表。你能否用两种方法解决这道题？">
 <meta name="keywords" content="数据结构和算法 链表实战 反转链表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构和算法-链表实战之反转链表">
 <meta property="og:url" content="http://yoursite.com/2019/08/03/数据结构和算法-链表实战-反转链表/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="链表实战题目1 - 反转链表题目如下：输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL进阶: 你可以迭代或递归地反转链表。你能否用两种方法解决这道题？ 方法一：反转链表最直接的思路就是转化为数组之后再生成链表。但是此方法的空间复杂度比较高，时间复杂度也不好。1234567891011121314">
+<meta property="og:description" content="链表实战题目1 - 反转链表题目如下：输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL进阶: 你可以迭代或递归地反转链表。你能否用两种方法解决这道题？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-05T06:54:30.556Z">
+<meta property="og:updated_time" content="2019-08-05T07:07:41.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构和算法-链表实战之反转链表">
-<meta name="twitter:description" content="链表实战题目1 - 反转链表题目如下：输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL进阶: 你可以迭代或递归地反转链表。你能否用两种方法解决这道题？ 方法一：反转链表最直接的思路就是转化为数组之后再生成链表。但是此方法的空间复杂度比较高，时间复杂度也不好。1234567891011121314">
+<meta name="twitter:description" content="链表实战题目1 - 反转链表题目如下：输入: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;NULL输出: 5-&amp;gt;4-&amp;gt;3-&amp;gt;2-&amp;gt;1-&amp;gt;NULL进阶: 你可以迭代或递归地反转链表。你能否用两种方法解决这道题？">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -215,6 +215,8 @@ var _hmt = _hmt || [];
 
         
           <h2 id="链表实战题目1-反转链表"><a href="#链表实战题目1-反转链表" class="headerlink" title="链表实战题目1 - 反转链表"></a>链表实战题目1 - 反转链表</h2><p>题目如下：<br>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL<br>输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL<br>进阶: 你可以迭代或递归地反转链表。你能否用两种方法解决这道题？</p>
+<a id="more"></a>
+
 <h3 id="方法一：反转链表最直接的思路就是转化为数组之后再生成链表。但是此方法的空间复杂度比较高，时间复杂度也不好。"><a href="#方法一：反转链表最直接的思路就是转化为数组之后再生成链表。但是此方法的空间复杂度比较高，时间复杂度也不好。" class="headerlink" title="方法一：反转链表最直接的思路就是转化为数组之后再生成链表。但是此方法的空间复杂度比较高，时间复杂度也不好。"></a>方法一：反转链表最直接的思路就是转化为数组之后再生成链表。但是此方法的空间复杂度比较高，时间复杂度也不好。</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#	 def __init__(self, x):</span></span><br><span class="line"><span class="comment">#		 self.val = x</span></span><br><span class="line"><span class="comment">#		 self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">reverseList</span><span class="params">(self, head)</span>:</span></span><br><span class="line">		<span class="string">"""</span></span><br><span class="line"><span class="string">		:type head: ListNode</span></span><br><span class="line"><span class="string">		:rtype: ListNode</span></span><br><span class="line"><span class="string">		"""</span></span><br><span class="line">		<span class="comment"># 首先判断链表是否为空，如果为空，那么直接返回退出</span></span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next: <span class="keyword">return</span> head</span><br><span class="line">		<span class="comment"># 将列表的值存储到数组res_origin中</span></span><br><span class="line">		res_origin = []</span><br><span class="line">		first = head</span><br><span class="line">		<span class="keyword">while</span> first:</span><br><span class="line">			res_origin.append(first.val)</span><br><span class="line">			first = first.next</span><br><span class="line">		<span class="comment"># 将数组转化为链表</span></span><br><span class="line">		<span class="comment"># 首先使用ListNode生成head节点，也就是第一个节点</span></span><br><span class="line">		head = ListNode(res_origin.pop())</span><br><span class="line">		<span class="comment"># 将第一个节点传递给last，然后接下来去生成last.next</span></span><br><span class="line">		last =  head</span><br><span class="line">		</span><br><span class="line">		<span class="comment"># method 1 #</span></span><br><span class="line">		<span class="comment"># 终止条件就是列表为空</span></span><br><span class="line">		<span class="comment"># while res_origin != []:</span></span><br><span class="line">		<span class="comment"># 	# last = head时，last.next = None,这时需要先去生成last.next</span></span><br><span class="line">		<span class="comment"># 	while last.next:</span></span><br><span class="line">		<span class="comment"># 		last = last.next</span></span><br><span class="line">		<span class="comment"># 	last.next = ListNode(res_origin.pop())</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">## method 2 #</span></span><br><span class="line">		<span class="keyword">while</span> res_origin != []:</span><br><span class="line">			last.next = ListNode(res_origin.pop())</span><br><span class="line">			last = last.next</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
 
 <h3 id="方法二：使用迭代的方法进行。因为反转列表是对链表中的每一个节点进行的操作，而终止信号时null，这就是典型的迭代。"><a href="#方法二：使用迭代的方法进行。因为反转列表是对链表中的每一个节点进行的操作，而终止信号时null，这就是典型的迭代。" class="headerlink" title="方法二：使用迭代的方法进行。因为反转列表是对链表中的每一个节点进行的操作，而终止信号时null，这就是典型的迭代。"></a>方法二：使用迭代的方法进行。因为反转列表是对链表中的每一个节点进行的操作，而终止信号时null，这就是典型的迭代。</h3><p>下面这个代码实际上是错误的，参考[leetcode的解法][<a href="https://leetcode-cn.com/problems/reverse-linked-list/solution/fan-zhuan-lian-biao-zhi-chang-gui-si-lu-he-die-dai/]。" target="_blank" rel="noopener">https://leetcode-cn.com/problems/reverse-linked-list/solution/fan-zhuan-lian-biao-zhi-chang-gui-si-lu-he-die-dai/]。</a></p>
@@ -336,8 +338,8 @@ var _hmt = _hmt || [];
     </a>
   
   
-    <a href="/2019/08/02/数据结构和算法-复杂度分析(1)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构和算法-复杂度分析(1)</div>
+    <a href="/2019/08/02/Hexo博客搭建过程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo博客搭建过程</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -470,6 +472,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo 博客搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据结构和算法 复杂度分析</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据结构和算法 链表实战 两两交换链表中的节点</a>
