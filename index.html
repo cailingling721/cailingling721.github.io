@@ -187,21 +187,211 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-数据结构和算法-复杂度分析(2)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-数据结构和算法-链表实战-两两交换列表中的元素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/02/数据结构和算法-复杂度分析(2)/">数据结构和算法-复杂度分析(2)</a>
+      <a class="article-title" href="/2019/08/04/数据结构和算法-链表实战-两两交换列表中的元素/">数据结构和算法-链表实战之两两交换链表中的节点</a>
     </h1>
   
 
           <!-- 显示阅读和评论数 -->
           
         
-        <a href="/2019/08/02/数据结构和算法-复杂度分析(2)/" class="archive-article-date">
+        <a href="/2019/08/04/数据结构和算法-链表实战-两两交换列表中的元素/" class="archive-article-date">
+  	<time datetime="2019-08-04T01:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+        
+          <h2 id="链表实战题目2-两两交换链表中的节点"><a href="#链表实战题目2-两两交换链表中的节点" class="headerlink" title="链表实战题目2 -  两两交换链表中的节点"></a>链表实战题目2 -  两两交换链表中的节点</h2><p>题目：给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。<br>示例: 给定 1-&gt;2-&gt;3-&gt;4, 你应该返回 2-&gt;1-&gt;4-&gt;3.</p>
+<h3 id="方法1-使用迭代的思路解决此问题"><a href="#方法1-使用迭代的思路解决此问题" class="headerlink" title="方法1: 使用迭代的思路解决此问题"></a>方法1: 使用迭代的思路解决此问题</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span>  </span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">swapPairs</span><span class="params">(self, head)</span>:</span>  </span><br><span class="line">		<span class="string">""" </span></span><br><span class="line"><span class="string">		:type head: ListNode </span></span><br><span class="line"><span class="string">		:rtype: ListNode </span></span><br><span class="line"><span class="string">		"""</span>  </span><br><span class="line">		<span class="keyword">if</span> head == <span class="literal">None</span> <span class="keyword">or</span> head.next == <span class="literal">None</span>: <span class="keyword">return</span> head</span><br><span class="line">		cur, cur.next = ListNode(<span class="number">0</span>), head</span><br><span class="line">		first = cur</span><br><span class="line"></span><br><span class="line">		<span class="comment"># cur.next以及cur.next.next都不为空时，执行交换。所以如果是有5个元素，那么最后只有一个元素时，就不满足cur.next.next不为空这个条件</span></span><br><span class="line">		<span class="keyword">while</span> cur.next <span class="keyword">and</span> cur.next.next:</span><br><span class="line">			<span class="comment"># n1和n2为要交换的两个节点</span></span><br><span class="line">			n1 = cur.next</span><br><span class="line">			n2 = n1.next</span><br><span class="line">			nex = n2.next</span><br><span class="line"></span><br><span class="line">			<span class="comment"># 交换n1和n2，此时cur.next发生了变化</span></span><br><span class="line">			<span class="comment"># 将第一个节点指向第三个节点</span></span><br><span class="line">			n1.next = nex</span><br><span class="line">			<span class="comment"># 第二个节点指向第一个节点</span></span><br><span class="line">			n2.next = n1</span><br><span class="line">			<span class="comment"># 节点first指向第二个节点</span></span><br><span class="line">			cur.next = n2</span><br><span class="line"></span><br><span class="line">			<span class="comment"># n1.next, n2.next, cur.next = next, n1, n2</span></span><br><span class="line"></span><br><span class="line">			<span class="comment"># 当前节点后移动，记得n1.next是节点3，相当于跳了一个节点，往后移动了两个节点</span></span><br><span class="line">			cur = n1</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> first.next</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法2-使用递归的思路解决此问题"><a href="#方法2-使用递归的思路解决此问题" class="headerlink" title="方法2: 使用递归的思路解决此问题"></a>方法2: 使用递归的思路解决此问题</h3><p>参考此链接中的[解法][<a href="https://leetcode-cn.com/problems/swap-nodes-in-pairs/solution/liang-liang-jiao-huan-lian-biao-zhong-de-jie-dia-4/]。另外具体递归过程的更详细解释可以参考此[链接][https://leetcode-cn.com/problems/swap-nodes-in-pairs/solution/chao-qiang-gifzhu-ni-li-jie-di-gui-fa-yun-xing-de-/]的动画图和注解。" target="_blank" rel="noopener">https://leetcode-cn.com/problems/swap-nodes-in-pairs/solution/liang-liang-jiao-huan-lian-biao-zhong-de-jie-dia-4/]。另外具体递归过程的更详细解释可以参考此[链接][https://leetcode-cn.com/problems/swap-nodes-in-pairs/solution/chao-qiang-gifzhu-ni-li-jie-di-gui-fa-yun-xing-de-/]的动画图和注解。</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span>  </span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">swapPairs</span><span class="params">(self, head)</span>:</span>  </span><br><span class="line">		<span class="string">""" </span></span><br><span class="line"><span class="string">		:type head: ListNode </span></span><br><span class="line"><span class="string">		:rtype: ListNode </span></span><br><span class="line"><span class="string">		"""</span>  </span><br><span class="line">		<span class="keyword">if</span> head == <span class="literal">None</span> <span class="keyword">or</span> head.next == <span class="literal">None</span>: <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">		cur = head</span><br><span class="line"></span><br><span class="line">		<span class="comment"># 下移两位之后，返回交换后两个节点中的前一个节点</span></span><br><span class="line">		nex = self.swapPairs(cur.next.next)</span><br><span class="line"></span><br><span class="line">		<span class="comment"># 交换两个节点</span></span><br><span class="line">		n1, n2 = cur, cur.next</span><br><span class="line">		n1.next, n2.next = nex, n1</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> n2</span><br></pre></td></tr></table></figure>
+
+<p>使用迭代解决问题时，先交换前两个，交换完成之后往下移动。而递归的思路是先往下移动，移动到最后再交换，交换完成的结果返回，而且返回的是n2,也就是两个交换后节点的前一个。</p>
+
+        
+      
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据结构和算法 链表实战 两两交换链表中的节点</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/04/数据结构和算法-链表实战-两两交换列表中的元素/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<!-- 添加打赏功能 -->
+
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数据结构和算法-链表实战-反转链表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/03/数据结构和算法-链表实战-反转链表/">数据结构和算法-链表实战之反转链表</a>
+    </h1>
+  
+
+          <!-- 显示阅读和评论数 -->
+          
+        
+        <a href="/2019/08/03/数据结构和算法-链表实战-反转链表/" class="archive-article-date">
+  	<time datetime="2019-08-03T00:31:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
+        
+          <h2 id="链表实战题目1-反转链表"><a href="#链表实战题目1-反转链表" class="headerlink" title="链表实战题目1 - 反转链表"></a>链表实战题目1 - 反转链表</h2><p>题目如下：<br>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL<br>输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL<br>进阶: 你可以迭代或递归地反转链表。你能否用两种方法解决这道题？</p>
+<h3 id="方法一：反转链表最直接的思路就是转化为数组之后再生成链表。但是此方法的空间复杂度比较高，时间复杂度也不好。"><a href="#方法一：反转链表最直接的思路就是转化为数组之后再生成链表。但是此方法的空间复杂度比较高，时间复杂度也不好。" class="headerlink" title="方法一：反转链表最直接的思路就是转化为数组之后再生成链表。但是此方法的空间复杂度比较高，时间复杂度也不好。"></a>方法一：反转链表最直接的思路就是转化为数组之后再生成链表。但是此方法的空间复杂度比较高，时间复杂度也不好。</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#	 def __init__(self, x):</span></span><br><span class="line"><span class="comment">#		 self.val = x</span></span><br><span class="line"><span class="comment">#		 self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">reverseList</span><span class="params">(self, head)</span>:</span></span><br><span class="line">		<span class="string">"""</span></span><br><span class="line"><span class="string">		:type head: ListNode</span></span><br><span class="line"><span class="string">		:rtype: ListNode</span></span><br><span class="line"><span class="string">		"""</span></span><br><span class="line">		<span class="comment"># 首先判断链表是否为空，如果为空，那么直接返回退出</span></span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next: <span class="keyword">return</span> head</span><br><span class="line">		<span class="comment"># 将列表的值存储到数组res_origin中</span></span><br><span class="line">		res_origin = []</span><br><span class="line">		first = head</span><br><span class="line">		<span class="keyword">while</span> first:</span><br><span class="line">			res_origin.append(first.val)</span><br><span class="line">			first = first.next</span><br><span class="line">		<span class="comment"># 将数组转化为链表</span></span><br><span class="line">		<span class="comment"># 首先使用ListNode生成head节点，也就是第一个节点</span></span><br><span class="line">		head = ListNode(res_origin.pop())</span><br><span class="line">		<span class="comment"># 将第一个节点传递给last，然后接下来去生成last.next</span></span><br><span class="line">		last =  head</span><br><span class="line">		</span><br><span class="line">		<span class="comment"># method 1 #</span></span><br><span class="line">		<span class="comment"># 终止条件就是列表为空</span></span><br><span class="line">		<span class="comment"># while res_origin != []:</span></span><br><span class="line">		<span class="comment"># 	# last = head时，last.next = None,这时需要先去生成last.next</span></span><br><span class="line">		<span class="comment"># 	while last.next:</span></span><br><span class="line">		<span class="comment"># 		last = last.next</span></span><br><span class="line">		<span class="comment"># 	last.next = ListNode(res_origin.pop())</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">## method 2 #</span></span><br><span class="line">		<span class="keyword">while</span> res_origin != []:</span><br><span class="line">			last.next = ListNode(res_origin.pop())</span><br><span class="line">			last = last.next</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法二：使用迭代的方法进行。因为反转列表是对链表中的每一个节点进行的操作，而终止信号时null，这就是典型的迭代。"><a href="#方法二：使用迭代的方法进行。因为反转列表是对链表中的每一个节点进行的操作，而终止信号时null，这就是典型的迭代。" class="headerlink" title="方法二：使用迭代的方法进行。因为反转列表是对链表中的每一个节点进行的操作，而终止信号时null，这就是典型的迭代。"></a>方法二：使用迭代的方法进行。因为反转列表是对链表中的每一个节点进行的操作，而终止信号时null，这就是典型的迭代。</h3><p>下面这个代码实际上是错误的，参考[leetcode的解法][<a href="https://leetcode-cn.com/problems/reverse-linked-list/solution/fan-zhuan-lian-biao-zhi-chang-gui-si-lu-he-die-dai/]。" target="_blank" rel="noopener">https://leetcode-cn.com/problems/reverse-linked-list/solution/fan-zhuan-lian-biao-zhi-chang-gui-si-lu-he-die-dai/]。</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里是错误的代码</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#	 def __init__(self, x):</span></span><br><span class="line"><span class="comment">#		 self.val = x</span></span><br><span class="line"><span class="comment">#		 self.next = None</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">reverseList</span><span class="params">(self, head)</span>:</span></span><br><span class="line"></span><br><span class="line">		current_node, pre = head, <span class="literal">None</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span> current_node:</span><br><span class="line">			</span><br><span class="line">			<span class="comment"># 实际上将当前节点指向了laste节点</span></span><br><span class="line">			laste = current_node.next</span><br><span class="line">			</span><br><span class="line">			<span class="comment"># 再次又想将laste节点指向current_node，如果想将laste节点指向current_node，那么就相当于把laste节点和再下一个节点断开了。</span></span><br><span class="line">			laste.next=current_node</span><br><span class="line">			current_node = current_node.next</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> new_head</span><br></pre></td></tr></table></figure>
+
+<p>正确的迭代解法就是设置一个中间桥梁，也就是我们设置了一个前向指针pre, 然后去迭代。让当前节点指向前一个节点是第一步，cur.next = pre；前一个节点往后移动，即pre = cur；将当前节点后移是第三步, cur = cur.next。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># class ListNode(object):</span></span><br><span class="line"><span class="comment">#	 def __init__(self, x):</span></span><br><span class="line"><span class="comment">#		 self.val = x</span></span><br><span class="line"><span class="comment">#		 self.next = None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1 -&gt; 2 -&gt; 3 -&gt; 4 -&gt; 5</span></span><br><span class="line"><span class="comment"># 1指向2，2指向3，3指向4，4指向5</span></span><br><span class="line"><span class="comment"># 2指向1，3指向2，4指向3，5指向5</span></span><br><span class="line"><span class="comment"># 5 -&gt; 4 -&gt; 3 -&gt; 2 -&gt; 1</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">reverseList</span><span class="params">(self, head)</span>:</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next: <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">		current_node, pre = head, <span class="literal">None</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span> current_node:</span><br><span class="line"></span><br><span class="line">			current_node.next, pre, current_node  = pre, current_node, current_node.next</span><br><span class="line"></span><br><span class="line">			<span class="comment"># # 以上的一句代码相当于如下的三句代码</span></span><br><span class="line"></span><br><span class="line">			<span class="comment"># 当前节点指向前一个节点。这里实际上就是反转列表的第一步，将当前节点指向pre节点，即前一个节点初始值None</span></span><br><span class="line">			</span><br><span class="line">			<span class="comment"># current_node.next = pre</span></span><br><span class="line"></span><br><span class="line">			<span class="comment"># 这里是将当前节点赋给pre, 也就是当前节点变为了前一个节点 </span></span><br><span class="line">			</span><br><span class="line">			<span class="comment"># pre = current_node</span></span><br><span class="line"></span><br><span class="line">			<span class="comment"># 当前节点往后移动</span></span><br><span class="line">			</span><br><span class="line">			<span class="comment"># current_node = current_node.next</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> pre</span><br></pre></td></tr></table></figure>
+
+<p>另外需要注意的是，在最后退出while循环时，当前节点是5，5指向节点4，让pre为节点5，当前节点就是None, 不满足while循环的条件也就退出。退出时，pre代表节点5，所以最终返回的是pre。</p>
+<h3 id="方法三：使用递归解决此问题。"><a href="#方法三：使用递归解决此问题。" class="headerlink" title="方法三：使用递归解决此问题。"></a>方法三：使用递归解决此问题。</h3><p>通过调用函数本身即递归，实现反转链表。参考此[链接][<a href="https://zhuanlan.zhihu.com/p/60117407]。" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/60117407]。</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">reverseList</span><span class="params">(self, head)</span>:</span></span><br><span class="line">		<span class="string">"""</span></span><br><span class="line"><span class="string">		:type head: ListNode</span></span><br><span class="line"><span class="string">		:rtype: ListNode</span></span><br><span class="line"><span class="string">		"""</span></span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> head: <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> head.next: </span><br><span class="line">			print(head.val)</span><br><span class="line">			<span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">		headNode = self.reverseList(head.next)</span><br><span class="line"></span><br><span class="line">		head.next.next = head</span><br><span class="line">		head.next = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> headNode</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>首先, 函数进入开头的两个if语句，分别是用来判断当前节点和下一个节点是否为NULL，尤其是第二个,在后面递归过程中也会用到。</p>
+</li>
+<li><p>然后, 开始进入递归，注意传给 self.reverseList() 的参数为 head.next ,也就是说链表的会一直往后传递，直到找到最后一个节点（也就是head.val == 5的节点，后文简述为节点5）。此时，因为不满足第二个if语句，返回节点5。我们可以在第二个if语句中加入一行print( head.val )，这样可以更容易看出返回的内容。</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> head.next:</span><br><span class="line">	print(head.val)</span><br><span class="line">	<span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>紧接着，函数在第二步返回到递归的上一层，headNode等于返回的节点5 , 也就是节点5作为反转的链表头，完成反转的第一步。</p>
+</li>
+<li><p>当前节点head为节点4, head.next指向节点5， head.next.next 指向 None。 head.next.next = head 让原来指向None的节点5，改为指向节点4，完成了5—&gt;None到5—&gt;4的反转；然后head.next = None, 作用在于截断节点4到节点5的指针，避免形成4—&gt;5—&gt;4的环。</p>
+</li>
+<li><p>同理，返回上一层，当前节点head为节点3，让节点4指向节点3，再截断节点3到节点4的指针。如此重复，直到反转所有节点，headNode即为反转后的链表。</p>
+</li>
+</ol>
+
+        
+      
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构和算法 链表实战 反转链表</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/03/数据结构和算法-链表实战-反转链表/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<!-- 添加打赏功能 -->
+
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Hexo博客搭建过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/02/Hexo博客搭建过程/">Hexo博客搭建过程</a>
+    </h1>
+  
+
+          <!-- 显示阅读和评论数 -->
+          
+        
+        <a href="/2019/08/02/Hexo博客搭建过程/" class="archive-article-date">
   	<time datetime="2019-08-02T08:08:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
 </a>
         
@@ -210,11 +400,11 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
 
-           <h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><h3 id="最好和最坏时间复杂度"><a href="#最好和最坏时间复杂度" class="headerlink" title="最好和最坏时间复杂度"></a>最好和最坏时间复杂度</h3><ol>
-<li>最坏情况时间复杂度：代码在最理想情况下执行的时间复杂度。</li>
-<li>最好情况时间复杂度：代码在最坏情况下执行的时间复杂度。</li>
-</ol>
-<p>拿下面的查找函数find为例子，如果要查找的元素正好位于数组的第一个位置，那么时间复杂度就是O(1),如果要查找的元素正好位于最后一个，那么就是最坏时间复杂度O(n)。</p>
+           <p>此次搭建博客主要参考的是这个<a href="https://www.bilibili.com/video/av44544186/?spm_id_from=trigger_reload" target="_blank" rel="noopener">视频</a>! 整个搭建过程也很顺利，现将搭建过程总结如下：</p>
+<h3 id="切换到root用户"><a href="#切换到root用户" class="headerlink" title="切换到root用户"></a>切换到root用户</h3><p>首先需要输入如下代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
+
+<p>这个命令，直接输入当前用户的密码即可切换到root用户。并且如果你的sudo设置而不需要输入密码，就直接切换到root用户了。</p>
         
       
     <div class="article-info article-info-index">
@@ -224,7 +414,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/02/数据结构和算法-复杂度分析(2)/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/02/Hexo博客搭建过程/">展开全文 >></a>
         </p>
       
 
@@ -322,21 +512,21 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-Hexo博客搭建过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-数据结构和算法-复杂度分析(2)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/02/Hexo博客搭建过程/">Hexo博客搭建过程</a>
+      <a class="article-title" href="/2019/08/02/数据结构和算法-复杂度分析(2)/">数据结构和算法-复杂度分析(2)</a>
     </h1>
   
 
           <!-- 显示阅读和评论数 -->
           
         
-        <a href="/2019/08/02/Hexo博客搭建过程/" class="archive-article-date">
+        <a href="/2019/08/02/数据结构和算法-复杂度分析(2)/" class="archive-article-date">
   	<time datetime="2019-08-02T08:08:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
 </a>
         
@@ -345,11 +535,11 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
 
-           <p>此次搭建博客主要参考的是这个<a href="https://www.bilibili.com/video/av44544186/?spm_id_from=trigger_reload" target="_blank" rel="noopener">视频</a>! 整个搭建过程也很顺利，现将搭建过程总结如下：</p>
-<h3 id="切换到root用户"><a href="#切换到root用户" class="headerlink" title="切换到root用户"></a>切换到root用户</h3><p>首先需要输入如下代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
-
-<p>这个命令，直接输入当前用户的密码即可切换到root用户。并且如果你的sudo设置而不需要输入密码，就直接切换到root用户了。</p>
+           <h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><h3 id="最好和最坏时间复杂度"><a href="#最好和最坏时间复杂度" class="headerlink" title="最好和最坏时间复杂度"></a>最好和最坏时间复杂度</h3><ol>
+<li>最坏情况时间复杂度：代码在最理想情况下执行的时间复杂度。</li>
+<li>最好情况时间复杂度：代码在最坏情况下执行的时间复杂度。</li>
+</ol>
+<p>拿下面的查找函数find为例子，如果要查找的元素正好位于数组的第一个位置，那么时间复杂度就是O(1),如果要查找的元素正好位于最后一个，那么就是最坏时间复杂度O(n)。</p>
         
       
     <div class="article-info article-info-index">
@@ -359,7 +549,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/02/Hexo博客搭建过程/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/02/数据结构和算法-复杂度分析(2)/">展开全文 >></a>
         </p>
       
 
@@ -557,6 +747,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据结构和算法 链表实战 两两交换链表中的节点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数据结构和算法 链表实战 反转链表</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

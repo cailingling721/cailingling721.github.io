@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>tags | Hexo</title>
+  <title>数据结构和算法-链表实战之两两交换链表中的节点 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="链表实战题目2 -  两两交换链表中的节点题目：给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。示例: 给定 1-&amp;gt;2-&amp;gt;3-&amp;gt;4, 你应该返回 2-&amp;gt;1-&amp;gt;4-&amp;gt;3. 方法1: 使用迭代的思路解决此问题12345678910111213141516171819202122232425262">
+<meta name="keywords" content="数据结构和算法 链表实战 两两交换链表中的节点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构和算法-链表实战之两两交换链表中的节点">
+<meta property="og:url" content="http://yoursite.com/2019/08/04/数据结构和算法-链表实战-两两交换列表中的元素/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="链表实战题目2 -  两两交换链表中的节点题目：给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。示例: 给定 1-&amp;gt;2-&amp;gt;3-&amp;gt;4, 你应该返回 2-&amp;gt;1-&amp;gt;4-&amp;gt;3. 方法1: 使用迭代的思路解决此问题12345678910111213141516171819202122232425262">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-02T07:32:35.355Z">
+<meta property="og:updated_time" content="2019-08-05T06:55:11.926Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="数据结构和算法-链表实战之两两交换链表中的节点">
+<meta name="twitter:description" content="链表实战题目2 -  两两交换链表中的节点题目：给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。示例: 给定 1-&amp;gt;2-&amp;gt;3-&amp;gt;4, 你应该返回 2-&amp;gt;1-&amp;gt;4-&amp;gt;3. 方法1: 使用迭代的思路解决此问题12345678910111213141516171819202122232425262">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -186,42 +190,54 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-数据结构和算法-链表实战-两两交换列表中的元素" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      数据结构和算法-链表实战之两两交换链表中的节点
     </h1>
   
 
           <!-- 显示阅读和评论数 -->
           
         
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2019-08-02T07:31:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
+        <a href="/2019/08/04/数据结构和算法-链表实战-两两交换列表中的元素/" class="archive-article-date">
+  	<time datetime="2019-08-04T01:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-      <div class="tag-cloud">
-        <div class="tag-cloud-title">
-        counter.tag_cloud
-        </div>
 
-        <div class="tag-cloud-tags">
-        <a href="/tags/数据结构和算法-链表实战-两两交换链表中的节点/" style="font-size: 12px; color: #ccc">数据结构和算法 链表实战 两两交换链表中的节点</a> <a href="/tags/数据结构和算法-链表实战-反转链表/" style="font-size: 12px; color: #ccc">数据结构和算法 链表实战 反转链表</a>
-        </div>
-      </div>
+        
+          <h2 id="链表实战题目2-两两交换链表中的节点"><a href="#链表实战题目2-两两交换链表中的节点" class="headerlink" title="链表实战题目2 -  两两交换链表中的节点"></a>链表实战题目2 -  两两交换链表中的节点</h2><p>题目：给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。<br>示例: 给定 1-&gt;2-&gt;3-&gt;4, 你应该返回 2-&gt;1-&gt;4-&gt;3.</p>
+<h3 id="方法1-使用迭代的思路解决此问题"><a href="#方法1-使用迭代的思路解决此问题" class="headerlink" title="方法1: 使用迭代的思路解决此问题"></a>方法1: 使用迭代的思路解决此问题</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span>  </span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">swapPairs</span><span class="params">(self, head)</span>:</span>  </span><br><span class="line">		<span class="string">""" </span></span><br><span class="line"><span class="string">		:type head: ListNode </span></span><br><span class="line"><span class="string">		:rtype: ListNode </span></span><br><span class="line"><span class="string">		"""</span>  </span><br><span class="line">		<span class="keyword">if</span> head == <span class="literal">None</span> <span class="keyword">or</span> head.next == <span class="literal">None</span>: <span class="keyword">return</span> head</span><br><span class="line">		cur, cur.next = ListNode(<span class="number">0</span>), head</span><br><span class="line">		first = cur</span><br><span class="line"></span><br><span class="line">		<span class="comment"># cur.next以及cur.next.next都不为空时，执行交换。所以如果是有5个元素，那么最后只有一个元素时，就不满足cur.next.next不为空这个条件</span></span><br><span class="line">		<span class="keyword">while</span> cur.next <span class="keyword">and</span> cur.next.next:</span><br><span class="line">			<span class="comment"># n1和n2为要交换的两个节点</span></span><br><span class="line">			n1 = cur.next</span><br><span class="line">			n2 = n1.next</span><br><span class="line">			nex = n2.next</span><br><span class="line"></span><br><span class="line">			<span class="comment"># 交换n1和n2，此时cur.next发生了变化</span></span><br><span class="line">			<span class="comment"># 将第一个节点指向第三个节点</span></span><br><span class="line">			n1.next = nex</span><br><span class="line">			<span class="comment"># 第二个节点指向第一个节点</span></span><br><span class="line">			n2.next = n1</span><br><span class="line">			<span class="comment"># 节点first指向第二个节点</span></span><br><span class="line">			cur.next = n2</span><br><span class="line"></span><br><span class="line">			<span class="comment"># n1.next, n2.next, cur.next = next, n1, n2</span></span><br><span class="line"></span><br><span class="line">			<span class="comment"># 当前节点后移动，记得n1.next是节点3，相当于跳了一个节点，往后移动了两个节点</span></span><br><span class="line">			cur = n1</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> first.next</span><br></pre></td></tr></table></figure>
 
+<h3 id="方法2-使用递归的思路解决此问题"><a href="#方法2-使用递归的思路解决此问题" class="headerlink" title="方法2: 使用递归的思路解决此问题"></a>方法2: 使用递归的思路解决此问题</h3><p>参考此链接中的[解法][<a href="https://leetcode-cn.com/problems/swap-nodes-in-pairs/solution/liang-liang-jiao-huan-lian-biao-zhong-de-jie-dia-4/]。另外具体递归过程的更详细解释可以参考此[链接][https://leetcode-cn.com/problems/swap-nodes-in-pairs/solution/chao-qiang-gifzhu-ni-li-jie-di-gui-fa-yun-xing-de-/]的动画图和注解。" target="_blank" rel="noopener">https://leetcode-cn.com/problems/swap-nodes-in-pairs/solution/liang-liang-jiao-huan-lian-biao-zhong-de-jie-dia-4/]。另外具体递归过程的更详细解释可以参考此[链接][https://leetcode-cn.com/problems/swap-nodes-in-pairs/solution/chao-qiang-gifzhu-ni-li-jie-di-gui-fa-yun-xing-de-/]的动画图和注解。</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span>  </span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">swapPairs</span><span class="params">(self, head)</span>:</span>  </span><br><span class="line">		<span class="string">""" </span></span><br><span class="line"><span class="string">		:type head: ListNode </span></span><br><span class="line"><span class="string">		:rtype: ListNode </span></span><br><span class="line"><span class="string">		"""</span>  </span><br><span class="line">		<span class="keyword">if</span> head == <span class="literal">None</span> <span class="keyword">or</span> head.next == <span class="literal">None</span>: <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">		cur = head</span><br><span class="line"></span><br><span class="line">		<span class="comment"># 下移两位之后，返回交换后两个节点中的前一个节点</span></span><br><span class="line">		nex = self.swapPairs(cur.next.next)</span><br><span class="line"></span><br><span class="line">		<span class="comment"># 交换两个节点</span></span><br><span class="line">		n1, n2 = cur, cur.next</span><br><span class="line">		n1.next, n2.next = nex, n1</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> n2</span><br></pre></td></tr></table></figure>
+
+<p>使用迭代解决问题时，先交换前两个，交换完成之后往下移动。而递归的思路是先往下移动，移动到最后再交换，交换完成的结果返回，而且返回的是n2,也就是两个交换后节点的前一个。</p>
+
+        
       
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据结构和算法 链表实战 两两交换链表中的节点</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -272,7 +288,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/tags/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/04/数据结构和算法-链表实战-两两交换列表中的元素/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,6 +302,16 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/03/数据结构和算法-链表实战-反转链表/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构和算法-链表实战之反转链表</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -345,7 +371,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
