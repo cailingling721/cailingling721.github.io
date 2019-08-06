@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>文章分类 | Hexo</title>
+  <title>数据结构和算法-环形链表II | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="文章分类">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="链表实战题目4 -  链表入环的第一个节点给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。说明：不允许修改给定的链表。进阶：你是否可以不用额外空间解决此题？">
+<meta name="keywords" content="数据结构和算法 链表实战 环形链表 leetcode-142">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构和算法-环形链表II">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/数据结构和算法-链表实战-环形链表II/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="链表实战题目4 -  链表入环的第一个节点给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。说明：不允许修改给定的链表。进阶：你是否可以不用额外空间解决此题？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-02T07:30:08.418Z">
+<meta property="og:updated_time" content="2019-08-06T05:40:43.441Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文章分类">
+<meta name="twitter:title" content="数据结构和算法-环形链表II">
+<meta name="twitter:description" content="链表实战题目4 -  链表入环的第一个节点给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。说明：不允许修改给定的链表。进阶：你是否可以不用额外空间解决此题？">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -186,22 +190,22 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-数据结构和算法-链表实战-环形链表II" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      文章分类
+      数据结构和算法-环形链表II
     </h1>
   
 
           <!-- 显示阅读和评论数 -->
           
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2019-08-02T07:28:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
+        <a href="/2019/08/06/数据结构和算法-链表实战-环形链表II/" class="archive-article-date">
+  	<time datetime="2019-08-06T01:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
 </a>
         
       </header>
@@ -209,21 +213,35 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
 
-      <div class="category-all-page">
-        <div class="category-all-title">
-        counter.categories
-        </div>
         
-        <div class="category-all">
-        
-        </div>
-        
-      </div>
+          <h2 id="链表实战题目4-链表入环的第一个节点"><a href="#链表实战题目4-链表入环的第一个节点" class="headerlink" title="链表实战题目4 -  链表入环的第一个节点"></a>链表实战题目4 -  链表入环的第一个节点</h2><p>给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。<br>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。<br>说明：不允许修改给定的链表。<br>进阶：你是否可以不用额外空间解决此题？</p>
+<a id="more"></a>
 
+<h3 id="方法一：直接法：哈希表"><a href="#方法一：直接法：哈希表" class="headerlink" title="方法一：直接法：哈希表"></a>方法一：直接法：哈希表</h3><p>此方法的空间复杂度为O(n)，并非最优，但是属于比较容易想到的方法。参考此<a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/solution/kuai-man-zhi-zhen-by-powcai-4/" target="_blank" rel="noopener">链接</a>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">detectCycle</span><span class="params">(self, head)</span>:</span></span><br><span class="line">		<span class="string">"""</span></span><br><span class="line"><span class="string">		:type head: ListNode</span></span><br><span class="line"><span class="string">		:rtype: ListNode</span></span><br><span class="line"><span class="string">		"""</span></span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next: <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">		</span><br><span class="line">		visited = set()</span><br><span class="line">		p = head</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span> p:</span><br><span class="line">			visited.add(p)</span><br><span class="line">			<span class="comment"># 如果成环，那么当前节点的下一个在已经遍历过的节点集合内</span></span><br><span class="line">			<span class="keyword">if</span> p.next <span class="keyword">in</span> visited:</span><br><span class="line">				<span class="comment"># 返回这个下一个节点即可</span></span><br><span class="line">				<span class="keyword">return</span> p.next</span><br><span class="line">			p = p.next</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="方法二：快慢指针法"><a href="#方法二：快慢指针法" class="headerlink" title="方法二：快慢指针法"></a>方法二：快慢指针法</h3><p>使用一个快指针和一个慢指针，快指针每次都是走两步，慢指针每次都是走一步。如果二者可以相遇，即 fast == slow，那么代表链表中存在环。如果快指针走到了链表的尾部就会跳出循环，链表中无环。</p>
+<p>当有环且快慢指针重合时，假设x为非环部分的长度，y为形成环路的位置到快慢指针重合位置的距离，z为快慢指针重合位置至形成环路位置之间的距离。重合时，慢指针行进的距离 = x + y；快指针行进的距离 = x + y + z + y。因为快指针的行走距离是慢指针的2倍，则有：2 * (x + y) = x + y + z + y。解得：x = z。</p>
+<p>所以，通过在快慢指针重合的位置以及链表起始位置head，放置两个指针开始循环，每次两边各前进一个位置，当两者重合时的位置，就是链表形成环路的那个位置。参考此<a href="https://leetcode-cn.com/problems/linked-list-cycle/solution/bu-chong-ti-mu-qiu-xing-cheng-huan-de-ju-ti-wei-zh/" target="_blank" rel="noopener">链接</a>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">detectCycle</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type head: ListNode</span></span><br><span class="line"><span class="string">        :rtype: ListNode</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next : <span class="keyword">return</span> </span><br><span class="line">        <span class="comment"># 快慢指针</span></span><br><span class="line">        slow = head</span><br><span class="line">        fast = head</span><br><span class="line">        <span class="comment"># 重新开始</span></span><br><span class="line">        start = head</span><br><span class="line">        <span class="keyword">while</span> fast <span class="keyword">and</span> fast.next:</span><br><span class="line">            slow = slow.next</span><br><span class="line">            fast = fast.next.next</span><br><span class="line">            <span class="comment"># 找到相遇点</span></span><br><span class="line">            <span class="keyword">if</span> slow == fast:</span><br><span class="line">                <span class="keyword">while</span> slow != start:</span><br><span class="line">                    slow = slow.next</span><br><span class="line">                    start = start.next</span><br><span class="line">                <span class="keyword">return</span> slow</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+
+        
       
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数据结构和算法 链表实战 环形链表 leetcode-142</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -274,7 +292,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/categories/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/06/数据结构和算法-链表实战-环形链表II/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -288,6 +306,25 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/08/06/数据结构和算法-链表实战-K个一组反转链表/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据结构和算法-链表实战之K个一组反转链表
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/05/数据结构和算法-链表实战-环形链表/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构和算法-链表实战之环形链表</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -347,7 +384,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
